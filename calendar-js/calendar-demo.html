@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="./calendar-component/calendar.css">
+    <title>日历</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        @media screen and (min-width: 320px) and (max-width: 450px) {
+            html {
+                font-size: calc(28 / 7.5 * 1vw);
+            }
+        }
+
+        .select-date {
+            margin: 4vw;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .select-date > div {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            color: #333;
+        }
+
+        .select-date > div span:last-child {
+            color: #999;
+            font-size: .71rem;
+        }
+
+        .select-date .live-day {
+            color: #f48f35;
+            font-size: .71rem;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="select-date">
+    <div>
+        <span class="start-date"></span>
+        <span>入住日期</span>
+    </div>
+    <div class="live-day">共1晚</div>
+    <div>
+        <span class="end-date"></span>
+        <span>离店日期</span>
+    </div>
+</div>
+<div class="calendar-component hide">
+
+</div>
+<script src="./calendar-component/calendar.js"></script>
+<script>
+
+    document.querySelector('.start-date').innerText = today;
+    document.querySelector('.end-date').innerText = tomorrow;
+
+</script>
+</body>
+</html>
